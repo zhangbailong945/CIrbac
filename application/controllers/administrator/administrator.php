@@ -8,4 +8,10 @@ class administrator extends CI_Controller{
   function index(){
     $this->load->view('administrator/index');
   }
+  
+  function welcome()
+  {
+    $this->load->view('administrator/welcome');
+  }
+  
 }

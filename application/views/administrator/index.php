@@ -1,6 +1,7 @@
 <?php 
 
 $liger_Path=base_url().'public/ligerui/';
+$submit_Path=base_url().'index.php/'
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -84,6 +85,7 @@ $liger_Path=base_url().'public/ligerui/';
                     $(this).removeClass("l-link-over");
                 });
                 //树
+                /*
                 $("#tree1").ligerTree({
                     data : indexdata,
                     checkbox: false,
@@ -110,7 +112,7 @@ $liger_Path=base_url().'public/ligerui/';
                         f_addTab(tabid, node.data.text, node.data.url);
                     }
                 });
-
+                */
                 function openNew(url)
                 { 
                     var jform = $('#opennew_form');
@@ -155,6 +157,7 @@ $liger_Path=base_url().'public/ligerui/';
                     }
                 });
             }
+            /* 查看源码
             function addShowCodeBtn(tabid)
             {
                 var viewSourceBtn = $('<a class="viewsourcelink" href="javascript:void(0)">查看源码</a>');
@@ -171,6 +174,7 @@ $liger_Path=base_url().'public/ligerui/';
                     viewSourceBtn.removeClass("viewsourcelink-over");
                 });
             }
+            
             function showCodeView(src)
             {
                 $.ligerDialog.open({
@@ -181,6 +185,7 @@ $liger_Path=base_url().'public/ligerui/';
                 });
 
             }
+            */
             function addFrameSkinLink(tabid)
             {
                 var prevHref = getLinkPrevHref(tabid) || "";
@@ -211,10 +216,12 @@ $liger_Path=base_url().'public/ligerui/';
             { 
                 $.cookie('liger-home-tab', JSON2.stringify(tabItems));
             }
+            /*
             function css_init()
             {
                 var css = $("#mylink").get(0), skin = getQueryString("skin");
                 $("#skinSelect").val(skin);
+               
                 $("#skinSelect").change(function ()
                 { 
                     if (this.value)
@@ -225,13 +232,14 @@ $liger_Path=base_url().'public/ligerui/';
                         location.href = "index.htm";
                     }
                 });
-
+                
                
                 if (!css || !skin) return;
                 skin = skin.toLowerCase();
                 $('body').addClass("body-" + skin); 
                 $(css).attr("href", skin_links[skin]); 
             }
+            */
             function getQueryString(name)
             {
                 var now_url = document.location.search.slice(1), q_array = now_url.split('&');
@@ -308,7 +316,9 @@ $liger_Path=base_url().'public/ligerui/';
 <div id="pageloading"></div>  
 <div id="topmenu" class="l-topmenu">
     <div class="l-topmenu-logo">Codeigniter RBAC权限管理</div>
+      
     <div class="l-topmenu-welcome">
+        <!--
         <label> 皮肤切换：</label>
         <select id="skinSelect">
             <option value="aqua">默认</option> 
@@ -316,6 +326,7 @@ $liger_Path=base_url().'public/ligerui/';
             <option value="gray">Gray</option>
             <option value="gray2014">Gray2014</option>
         </select>
+        -->
         <a href="#" class="l-link2">管理员</a>
         <span class="space">|</span>
         <a href="#" class="l-link2" target="_blank">捐赠</a> 
@@ -325,15 +336,14 @@ $liger_Path=base_url().'public/ligerui/';
 </div>
   <div id="layout1" style="width:99.2%; margin:0 auto; margin-top:4px; "> 
         <div position="left"  title="主要菜单" id="accordion1"> 
+                     <!--  
                      <div title="功能列表" class="l-scroll">
                          <ul id="tree1" style="margin-top:3px;">
                     </div>
+                    -->
                     <div title="导航管理">
                     <div style=" height:7px;"></div>
-                        <a class="l-link" href="http://www.ligerui.com/go.aspx?id=case" target="_blank">演示系统</a>  
-                         <a class="l-link" href="javascript:f_addTab('listpage','列表页面','demos/case/listpage.htm')">列表页面</a> 
-                         <a class="l-link" href="demos/dialog/win7.htm" target="_blank">模拟Window桌面</a> 
-                        <a class="l-link" href="javascript:f_addTab('week','工作日志','demos/case/week.htm')">工作日志</a>  
+                        <a class="l-link" href="javascript:f_addTab('week','工作日志','<?php echo $submit_Path;?>administrator/administrator/welcome')">工作日志</a>  
                     </div>    
                      <div title="节点管理">
                     <div style=" height:7px;"></div>
@@ -353,7 +363,7 @@ $liger_Path=base_url().'public/ligerui/';
         </div>
         <div position="center" id="framecenter"> 
             <div tabid="home" title="我的主页" style="height:300px" >
-                <iframe frameborder="0" name="home" id="home" src="welcome.htm"></iframe>
+                <iframe frameborder="0" name="home" id="home" src="<?php echo $submit_Path;?>administrator/administrator/welcome"></iframe>
             </div> 
         </div> 
         
