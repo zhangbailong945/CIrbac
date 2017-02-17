@@ -1,5 +1,8 @@
-#Fri Feb 10 06:05:34 GMT 2017
+#Fri Feb 17 07:14:21 GMT 2017
 eclipse.preferences.version=1
+encoding//application/config/autoload.php=UTF-8
 encoding//application/config/database.php=UTF-8
+encoding//application/config/hooks.php=UTF-8
+encoding//application/third_party/rbac/hooks/rbac_hook.php=UTF-8
 encoding//application/views/administrator/index.php=UTF-8
 encoding//application/views/administrator/welcome.php=UTF-8

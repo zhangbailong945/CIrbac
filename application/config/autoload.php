@@ -39,7 +39,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |  $autoload['packages'] = array(APPPATH.'third_party', '/usr/local/shared');
 |
 */
-$autoload['packages'] = array();
+/*如果插件中包含libraries,models,helpers,config和language文件，
+我们只能放在application目录下的各个文件夹中，因为这些是第三方提供的程序，
+如果放在这些目录下，不方便管理且容易引起冲突，
+如果能有单独的一个目录放这些第三方提供的程序，那是再好不过的了，
+CI2.0则提供了这样的功能。
+*/
+
+
+$autoload['packages'] = array(APPPATH.'third_party/rbac');
 
 /*
 | -------------------------------------------------------------------
